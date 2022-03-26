@@ -6,7 +6,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.conversations.PlayerNamePrompt;
 import org.bukkit.entity.Player;
 
-public class stat implements CommandExecutor {
+public class Stat implements CommandExecutor {
     //CommandSender sender,Command command,String label,String[] args커맨드
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args){
         Player player=(Player)sender;
