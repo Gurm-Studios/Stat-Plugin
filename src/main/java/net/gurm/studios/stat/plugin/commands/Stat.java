@@ -10,28 +10,11 @@ public class Stat implements CommandExecutor {
     //CommandSender sender,Command command,String label,String[] args커맨드
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args){
         Player player=(Player)sender;
-        if(args[0].equals("명령어")||args.length==0){
-            player.sendMessage(""" 
+        player.sendMessage(""" 
                                      스텟 player add 스텟종류 수치   수치만큼 스텟을 올립니다\n  
                                      스텟 player min 스텟종류 수치   수치만큼 스텟을 내립니다\n
-                                     스텟 player set 스텟종류 수치   수치만큼 스텟을 정합니다 
-                                     
-                                     
-                                     
-                                     
+                                     스텟 player set 스텟종류 수치   수치만큼 스텟을 정합니다\n                                                                        
                                      """);
-        } else {
-            if(args[1].equals("add")){
-
-            }
-            else if (args[1].equals("min")){
-
-            }
-            else if(args[1].equals("set")){
-
-            }
-
-        }
         return false;
     }
 }
