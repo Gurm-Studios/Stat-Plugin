@@ -10,9 +10,6 @@ import java.util.HashMap;
 import java.util.UUID;
 
 public class Main extends JavaPlugin {
-    
-    ConsoleCommandSender consol = Bukkit.getConsoleSender();
-    HashMap<UUID, Integer> map = new HashMap<UUID, Integer>();
 
     public void onEnable(){
         getLogger().info("★Plugin [✔]");
