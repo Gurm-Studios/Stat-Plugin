@@ -1,30 +1,16 @@
-package net.gurm.studios.stat.plugin.commands;
+package net.gurm.studios.stat.plugin;
 
-import org.bukkit.*;
-import org.bukkit.command.Command;
-import org.bukkit.command.CommandExecutor;
-import org.bukkit.command.CommandSender;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.util.UUID;
+import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 
-public class Start implements CommandExecutor {
+public class stat {
 
-
-
-    @Override
-    public boolean onCommand(CommandSender commandSender, Command command, String s, String[] args) {
-        UUID p = null;
-        if (args.length == 0) {
-            commandSender.sendMessage("player를 입력하세요");
-        } else {
-            p = Bukkit.getPlayer(args[0]).getUniqueId();
-        }
+    public long[] readstat(String p) {
         File filen = new File("plugins/stat_plugin/player data" + p + ".txt");
         File folderl1 = new File("plugins/stat_plugin");
         File folderl2 = new File("plugins/stat_plugin/player data");
-
+        long[] stat = new long[0];
         try {
             if (!filen.exists()) {
                 folderl1.mkdir();
@@ -46,9 +32,23 @@ public class Start implements CommandExecutor {
                     "mana_power:0\n");
             w.flush();
             w.close();
+            stat = new long[11];
+            BufferedReader r = new BufferedReader(new FileReader(filen));
+            List list = new ArrayList();
+            String s;
+            while (null != (s = r.readLine())) {
+                list.add(Long.valueOf(cutter(s)));
+            }
+            r.close();
+            for (int cnt = 0; cnt < 10; cnt++) {
+                stat[cnt] = ((long) list.get(cnt));
+            }
         } catch (Exception e) {
         }
-
-        return false;
+        return stat;
+    }
+    public long cutter(String c){
+        String[] cut = c.split(":");
+        return Long.parseLong(cut[1]);
     }
 }
