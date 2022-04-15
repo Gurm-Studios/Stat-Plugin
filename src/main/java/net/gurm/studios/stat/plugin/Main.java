@@ -1,19 +1,17 @@
 package net.gurm.studios.stat.plugin;
 
 import net.gurm.studios.stat.plugin.commands.Start;
-import net.gurm.studios.stat.plugin.commands.Stat;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.bukkit.event.EventHandler;
 
 public class Main extends JavaPlugin {
 
-    public stat s =new stat();
+    public Stat s =new Stat();
 
     @Override
     public void onEnable(){
         getLogger().info("★Plugin [✔]");
-        getCommand("스텟").setExecutor(new Stat());
+        getCommand("스텟").setExecutor(new net.gurm.studios.stat.plugin.commands.Stat());
         getCommand("시작").setExecutor(new Start());
     }
 
