@@ -45,13 +45,13 @@ public class GUI {
         Stack(ChatColor.BOLD + ""+ChatColor.DARK_GREEN+"맷집",311,0,1,
                 Arrays.asList(),22,inv
         );
-        Stack(ChatColor.BOLD + ""+ChatColor.RED+"생명력",322/1,0,1,
+        Stack(ChatColor.BOLD + ""+ChatColor.RED+"생명력",322,1,1,
                 Arrays.asList(),31,inv
         );
-        Stack(ChatColor.BOLD + ""+ChatColor.BLUE+"마나",351/4,0,1,
+        Stack(ChatColor.BOLD + ""+ChatColor.BLUE+"마나",351,4,1,
                 Arrays.asList(),24,inv
         );
-        Stack(ChatColor.BOLD + ""+ChatColor.DARK_BLUE+"마력",351/12,0,1,
+        Stack(ChatColor.BOLD + ""+ChatColor.DARK_BLUE+"마력",351,12,1,
                 Arrays.asList(),33,inv
         );
         p.openInventory(inv);
