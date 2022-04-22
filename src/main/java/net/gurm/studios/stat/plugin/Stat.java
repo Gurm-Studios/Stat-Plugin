@@ -10,7 +10,7 @@ public class Stat {
         File filen = new File("plugins/stat_plugin/player data" + p + ".txt");
         File folderl1 = new File("plugins/stat_plugin");
         File folderl2 = new File("plugins/stat_plugin/player data");
-        long[] stat = new long[0];
+        long[] stat = new long[17];
         try {
             if (!filen.exists()) {
                 folderl1.mkdir();
@@ -25,14 +25,21 @@ public class Stat {
                     "stat_point:5\r\n" +
                     "limit_point:1\r\n" +
                     "power:0\r\n" +
+                    "L_power:0\r\n" +
                     "agility:0\n" +
+                    "L_agility:0\n" +
                     "tenacious:0\n" +
+                    "L_tenacious:0\n" +
                     "vitality:0\n" +
+                    "L_vitality:0\n" +
                     "mana:0\n" +
-                    "mana_power:0\n");
+                    "L_mana:0\n" +
+                    "mana_power:0\n" +
+                    "L_mana_power:0\n" +
+                    "돈:0\n");
             w.flush();
             w.close();
-            stat = new long[11];
+            stat = new long[17];
             BufferedReader r = new BufferedReader(new FileReader(filen));
             List list = new ArrayList();
             String s;
@@ -40,7 +47,7 @@ public class Stat {
                 list.add(Long.valueOf(cutter(s)));
             }
             r.close();
-            for (int cnt = 0; cnt < 10; cnt++) {
+            for (int cnt = 0; cnt < 17; cnt++) {
                 stat[cnt] = ((long) list.get(cnt));
             }
         } catch (Exception e) {

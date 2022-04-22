@@ -23,9 +23,13 @@ public class Main extends JavaPlugin {
         getLogger().info("★Plugin [❌]");
     }
 
+    public void Chat(){
 
-    public void onJoin(PlayerJoinEvent e){
-        s.readstat(String.valueOf(e));
+    }
+
+    public void PlayerJoin(PlayerJoinEvent e)
+    {
+        s.readstat(e.getPlayer().getUniqueId().toString());
     }
 
 }

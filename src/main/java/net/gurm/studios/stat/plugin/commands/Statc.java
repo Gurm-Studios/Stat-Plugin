@@ -11,9 +11,6 @@ import org.bukkit.entity.Player;
 public class Statc implements CommandExecutor {
     public GUI gui = new GUI();
 
-    public Statc() {
-    }
-
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         Player player = (Player)sender;
         if (args.length == 0) {
@@ -22,7 +19,7 @@ public class Statc implements CommandExecutor {
         else if((args[0].equals("보기")||args[0].equals("see"))&&args.length==2){
             gui.SGUI(Bukkit.getPlayer(args[1]));
         }
-        else if(player.isOp()==true){
+        else if(player.isOp()==true && args[0].equalsIgnoreCase("명령어")){
             player.sendMessage("스텟" +
                     ChatColor.YELLOW + "player" + ChatColor.GOLD + "add" +
                     ChatColor.RESET + "스텟종류 수치\n" + ChatColor.GRAY + "수치만큼 스텟을 올립니다\n스텟" +
