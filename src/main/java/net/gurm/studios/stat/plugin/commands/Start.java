@@ -49,7 +49,8 @@ public class Start implements CommandExecutor {
                     "mana:0\n" +
                     "L_mana:0\n" +
                     "mana_power:0\n"+
-                    "L_mana_power:0\n");
+                    "L_mana_power:0\n"+
+                    "money:0\n");
             w.flush();
             w.close();
         } catch (Exception e) {

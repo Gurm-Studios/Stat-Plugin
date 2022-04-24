@@ -14,24 +14,24 @@ public class Statc implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         Player player = (Player)sender;
         if (args.length == 0) {
-            gui.SGUI(player);
+            gui.SGUI(player,player);
         }
         else if((args[0].equals("보기")||args[0].equals("see"))&&args.length==2){
-            gui.SGUI(Bukkit.getPlayer(args[1]));
+            gui.SGUI(Bukkit.getPlayer(args[1]),player);
         }
         else if(player.isOp()==true && args[0].equalsIgnoreCase("명령어")){
             player.sendMessage("스텟" +
-                    ChatColor.YELLOW + "player" + ChatColor.GOLD + "add" +
+                    ChatColor.YELLOW + "player " + ChatColor.GOLD + "add " +
                     ChatColor.RESET + "스텟종류 수치\n" + ChatColor.GRAY + "수치만큼 스텟을 올립니다\n스텟" +
-                    ChatColor.YELLOW + "player" + ChatColor.GOLD + "min" +
+                    ChatColor.YELLOW + "player " + ChatColor.GOLD + "min " +
                     ChatColor.RESET + "스텟종류 수치\n" + ChatColor.GRAY + "수치만큼 스텟을 내립니다\n스텟" +
-                    ChatColor.YELLOW + "player" + ChatColor.GOLD +
+                    ChatColor.YELLOW + "player " + ChatColor.GOLD + "set " +
                     ChatColor.RESET + "스텟종류 수치\n" + ChatColor.GRAY + "수치만큼 스텟을 정합니다\n스텟" +
                     ChatColor.GOLD + "확인" + ChatColor.YELLOW + "player\n" +
                     ChatColor.GRAY + "player의 스텟을 확인 합니다\n");
         }
         else{
-            player.sendMessage("스텟"+ChatColor.GOLD + "확인" + ChatColor.YELLOW + "player\n" +
+            player.sendMessage("스텟 "+ChatColor.GOLD + "확인 " + ChatColor.YELLOW + "player\n" +
                     ChatColor.GRAY + "player의 스텟을 확인 합니다\n");
         }
 
