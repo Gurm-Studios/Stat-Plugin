@@ -1,6 +1,7 @@
 package net.gurm.studios.stat.plugin.commands;
 
 import net.gurm.studios.stat.plugin.GUI;
+import net.gurm.studios.stat.plugin.Stat_manager;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -10,6 +11,7 @@ import org.bukkit.entity.Player;
 
 public class Statc implements CommandExecutor {
     public GUI gui = new GUI();
+    public Stat_manager stat_manager=new Stat_manager();
 
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         Player player = (Player)sender;

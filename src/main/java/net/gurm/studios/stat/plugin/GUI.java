@@ -14,10 +14,8 @@ import java.util.Arrays;
 import java.util.List;
 
 public class GUI {
-    public Stat s = new Stat();
 
-    public GUI() {
-    }
+    public Stat_manager s= new Stat_manager();
 
     public void Stack(String display, int ID, int Data, int Stack, List<String> lore, int loc, Inventory inv) {
         ItemStack Item = (new MaterialData(ID, (byte)Data)).toItemStack(Stack);
@@ -85,8 +83,7 @@ public class GUI {
         {
             if(e.getCurrentItem()==null||
                     e.getCurrentItem().getType()== Material.AIR||
-                    e.getCurrentItem().hasItemMeta())
-            {
+                    e.getCurrentItem().hasItemMeta()) {
                 return;
             }
             else
@@ -95,29 +92,29 @@ public class GUI {
                 i=s.readstat(p.getUniqueId().toString());
                 switch (ChatColor.stripColor(e.getCurrentItem().getItemMeta().getDisplayName()))
                 {
-                    case "힘":s.Stat_up(i,p,5);
+                    case "힘":
                         break;
-                    case "힘(제한 스텟)":s.Stat_up(i,p,6);
+                    case "힘(제한 스텟)":
                         break;
-                    case "민첩":s.Stat_up(i,p,7);
+                    case "민첩":
                         break;
-                    case "민첩(제한 스텟)":s.Stat_up(i,p,8);
+                    case "민첩(제한 스텟)":
                         break;
-                    case "맷집":s.Stat_up(i,p,9);
+                    case "맷집":
                         break;
-                    case "맷집(제한 스텟)":s.Stat_up(i,p,10);
+                    case "맷집(제한 스텟)":
                         break;
-                    case "생명력":s.Stat_up(i,p,11);
+                    case "생명력":
                         break;
-                    case "생명력(제한 스텟)":s.Stat_up(i,p,12);
+                    case "생명력(제한 스텟)":
                         break;
-                    case "마나":s.Stat_up(i,p,13);
+                    case "마나":
                         break;
-                    case "마나(제한 스텟)":s.Stat_up(i,p,14);
+                    case "마나(제한 스텟)":
                         break;
-                    case "마력":s.Stat_up(i,p,15);
+                    case "마력":
                         break;
-                    case "마력(제한 스텟)":s.Stat_up(i,p,16);
+                    case "마력(제한 스텟)":
                         break;
                 }
             }

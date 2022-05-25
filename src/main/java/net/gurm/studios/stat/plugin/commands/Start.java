@@ -11,8 +11,6 @@ import java.util.UUID;
 
 public class Start implements CommandExecutor {
 
-
-
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] args) {
         UUID p = null;

@@ -1,6 +1,7 @@
 package net.gurm.studios.stat.plugin.commands;
 
 import net.gurm.studios.stat.plugin.GUI;
+import net.gurm.studios.stat.plugin.Stat_manager;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -9,9 +10,10 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 public class Stat implements CommandExecutor {
-    public net.gurm.studios.stat.plugin.Stat s =new net.gurm.studios.stat.plugin.Stat();
+    public Stat_manager s=new Stat_manager();
     public GUI gui=new GUI();
     //CommandSender sender,Command command,String label,String[] args커맨드
+    @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args){
         Player player=(Player)sender;
         if(sender instanceof Player) {
@@ -32,7 +34,7 @@ public class Stat implements CommandExecutor {
                                 "스텟" + ChatColor.GOLD + "확인" + ChatColor.YELLOW + "player\n" +
                                 ChatColor.GRAY + "   player의 스텟을 확인 합니다\n");
             } else if (args.length == 0) {
-                gui.
+
             } else if (args[0].equalsIgnoreCase("확인") || args[0].equalsIgnoreCase("check") && args.length == 2) {
                 long[] stat;
                 stat = s.readstat(String.valueOf(Bukkit.getPlayer(args[1]).getUniqueId()));
