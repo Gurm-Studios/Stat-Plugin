@@ -27,14 +27,21 @@ public class Stat_manager {
                     "stat_point:5\r\n" +
                     "limit_point:1\r\n" +
                     "power:0\r\n" +
+                    "L_power:0\r\n" +
                     "agility:0\n" +
+                    "L_agility:0\n" +
                     "tenacious:0\n" +
+                    "L_tenacious:0\n" +
                     "vitality:0\n" +
+                    "L_vitality:0\n" +
                     "mana:0\n" +
-                    "mana_power:0\n");
+                    "L_mana:0\n" +
+                    "mana_power:0\n"+
+                    "L_mana_power:0\n"+
+                    "money:0\n");
             w.flush();
             w.close();
-            stat = new long[11];
+            stat = new long[18];
             BufferedReader r = new BufferedReader(new FileReader(filen));
             List list = new ArrayList();
             String s;
