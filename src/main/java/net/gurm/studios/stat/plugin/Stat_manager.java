@@ -9,18 +9,18 @@ import java.util.List;
 public class Stat_manager {
 
     public long[] readstat(String p) {
-        File filen = new File("plugins/stat_plugin/player data" + p + ".txt");
-        File folderl1 = new File("plugins/stat_plugin");
-        File folderl2 = new File("plugins/stat_plugin/player data");
+        File file_name = new File("plugins/stat_plugin/player data" + p + ".txt");
+        File folder_location1 = new File("plugins/stat_plugin");
+        File folder_location2 = new File("plugins/stat_plugin/player data");
         long[] stat = new long[0];
         try {
-            if (!filen.exists()) {
-                folderl1.mkdir();
-                folderl2.mkdir();
-                filen.createNewFile();
+            if (!file_name.exists()) {
+                folder_location1.mkdir();
+                folder_location2.mkdir();
+                file_name.createNewFile();
 
             }
-            BufferedWriter w = new BufferedWriter(new FileWriter(filen));
+            BufferedWriter w = new BufferedWriter(new FileWriter(file_name));
             w.append("level:0\r\n" +
                     "xp:0\r\n" +
                     "max_xp:100\r\n" +
@@ -42,7 +42,7 @@ public class Stat_manager {
             w.flush();
             w.close();
             stat = new long[18];
-            BufferedReader r = new BufferedReader(new FileReader(filen));
+            BufferedReader r = new BufferedReader(new FileReader(file_name));
             List list = new ArrayList();
             String s;
             while (null != (s = r.readLine())) {

@@ -33,16 +33,10 @@ public class Main extends JavaPlugin implements Listener {
     }
 
     @EventHandler
-    public void move(PlayerMoveEvent e){
-    }
-
-    @EventHandler
     public void InventoryClick(InventoryClickEvent e){
-        if(ChatColor.stripColor(e.getClickedInventory().getTitle())=="스테이터스")
+        if(ChatColor.stripColor(e.getClickedInventory().getTitle()).equals("스테이터스"))
         {
-            Player player=Bukkit.getPlayer(e.getWhoClicked().getName());
             e.setCancelled(true);
-            player.sendMessage("됬당");
             g.SGUI_click(e);
         }
     }
